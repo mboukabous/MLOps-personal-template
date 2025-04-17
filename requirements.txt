@@ -1,0 +1,9 @@
+pytest
+pytest-cov
+pylint
+black
+fire
+fastapi
+uvicorn[standard]
+pydantic
+boto3
