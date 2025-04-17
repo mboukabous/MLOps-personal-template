@@ -11,6 +11,9 @@ format:
 lint:
 	pylint --disable=R,C --ignore-pattern=test_*.py *.py myLib/*.py
 
+container-lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile
+
 refactor: format lint
 
 deploy:
