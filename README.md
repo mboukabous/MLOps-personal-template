@@ -168,3 +168,5 @@ ENTRYPOINT [ "python" ]
 - `docker image ls`
 - `docker run -p 127.0.0.1:8080:8080 ImageID`
 - Test it: `bash invoke.sh`
+
+## TODO: Add commands to deploy the container to AWS ECR from here (instead of Cloud9)
