@@ -4,7 +4,7 @@
 
 ## Configure Development Environment
 
-- Create devcontainer (shift+cmd+p)
+- Create devcontainer (shift+cmd+p) -> https://containers.dev/features
 - Add Extensions
 - touch Makefile + requirements.txt
 ```bash
@@ -43,6 +43,8 @@ boto3
 ```
 
 - Create virtual environment: `python -m venv .venv`
+- Modify: `vim ~/.bashrc` with `:wq`
+- Add: `source .venv/bin/activate`
 
 - Aws configs
 `mkdir ~/.aws`

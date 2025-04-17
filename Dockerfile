@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.12
+FROM public.ecr.aws/lambda/python:3.10
 
 RUN mkdir -p /app
 COPY ./requirements.txt /app/
