@@ -134,3 +134,37 @@ async def function_cli(var: ClassName):
 if __name__ == "__main__":
     uvicorn.run(app, port=8080, host='0.0.0.0')
 ```
+
+- `touch invoke.sh`
+```bash
+curl -X 'POST' \
+  'http://0.0.0.0:8080/function' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "attr1": "abc",
+  "attr2": xyz
+}'
+```
+
+## Create a docker file
+
+- `touch Dockerfile`
+```bash
+FROM public.ecr.aws/lambda/python:3.12
+
+RUN mkdir -p /app
+COPY ./requirements.txt /app/
+COPY ./main.py /app/
+COPY ./myLib /app/myLib
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+WORKDIR /app
+EXPOSE 8080
+CMD [ "main.py" ]
+ENTRYPOINT [ "python" ]
+```
+
+- `docker build .`
+- `docker image ls`
+- `docker run -p 127.0.0.1:8080:8080 ImageID`
+- Test it: `bash invoke.sh`
