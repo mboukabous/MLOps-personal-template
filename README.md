@@ -6,6 +6,25 @@
 
 - Create devcontainer (shift+cmd+p) -> https://containers.dev/features
 - Add Extensions
+```bash
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"ms-vscode.makefile-tools",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	}
+}
+```
+
 - touch Makefile + requirements.txt
 ```bash
 install:
