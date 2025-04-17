@@ -1,4 +1,4 @@
-# functions-from-zero-mlops2
+# MLOps Personal Template
 
 [![Python application](https://github.com/mboukabous/functions-from-zero-mlops2/actions/workflows/main.yml/badge.svg)](https://github.com/mboukabous/functions-from-zero-mlops2/actions/workflows/main.yml)
 
