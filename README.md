@@ -1,5 +1,7 @@
 # functions-from-zero-mlops2
 
+[![Python application](https://github.com/mboukabous/functions-from-zero-mlops2/actions/workflows/main.yml/badge.svg)](https://github.com/mboukabous/functions-from-zero-mlops2/actions/workflows/main.yml)
+
 ## Configure Development Environment
 
 - Create devcontainer (shift+cmd+p)
@@ -62,4 +64,38 @@ region=us-east-1
 ```python
 import ipdb
 ipdb.set_trace()
+```
+
+# Create Action File (main.yml)
+
+```bash
+name: Python application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Format code
+        run: make format
+
+      - name: Lint with pylint
+        run: make lint
+
+      - name: Test with pytest
+        run: make test
 ```
