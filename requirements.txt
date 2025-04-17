@@ -3,6 +3,7 @@ pytest-cov
 pylint
 black
 fire
+click
 fastapi
 uvicorn[standard]
 pydantic
