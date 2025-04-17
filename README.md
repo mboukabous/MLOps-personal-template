@@ -13,13 +13,13 @@ install:
 	pip install -r requirements.txt
 
 test:
-	python -m pytest -vv --cov=Project test_*.py
+	python -m pytest -vv --cov=Project test_*.py myLib/test_*.py
 
 format:
-	black *.py
+	black *.py myLib/*.py
 
 lint:
-	pylint --disable=R,C --ignore-pattern=test_*.py *.py
+	pylint --disable=R,C --ignore-pattern=test_*.py *.py myLib/*.py
 
 refactor: format lint
 
@@ -99,3 +99,9 @@ jobs:
       - name: Test with pytest
         run: make test
 ```
+
+## Build a library and use it
+
+- `mkdir myLib`
+- `touch myLib/__init__.py`
+- `touch (necessary python libraries for the project)`
