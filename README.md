@@ -105,3 +105,32 @@ jobs:
 - `mkdir myLib`
 - `touch myLib/__init__.py`
 - `touch (necessary python libraries for the project)`
+
+## Build a FastAPI script
+
+- `touch main.py`
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel
+import uvicorn
+from mylib.module import function
+
+app = FastAPI()
+
+class ClassName(BaseModel):
+    attr1: str
+    attr2: int
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+@app.post("/link")
+async def function_cli(var: ClassName):
+    result = function(var.attr1, var.attr2)
+    payload = {"Result": result}
+    return payload
+
+if __name__ == "__main__":
+    uvicorn.run(app, port=8080, host='0.0.0.0')
+```
