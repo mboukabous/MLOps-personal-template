@@ -18,7 +18,8 @@
 			"extensions": [
 				"GitHub.copilot",
 				"ms-vscode.makefile-tools",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"ms-python.python"
 			]
 		}
 	}
@@ -190,4 +191,8 @@ ENTRYPOINT [ "python" ]
 - `docker run -p 127.0.0.1:8080:8080 ImageID`
 - Test it: `bash invoke.sh`
 
-## TODO: Add commands to deploy the container to AWS ECR from here (instead of Cloud9)
+## ECR
+
+- Deploy the container to AWS ECR using the commands in ECR
+- Fill in the deploy section in Makefile
+- TODO: auto creation of ECR using a scripts
