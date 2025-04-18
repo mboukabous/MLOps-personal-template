@@ -1,4 +1,4 @@
-env:
+env-config:
 	@echo "Creating virtual environment..."
 	python3 -m venv .venv
 	@echo "✅ Environment ready. Now run:"
