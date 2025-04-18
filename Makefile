@@ -10,6 +10,15 @@ install:
 	pip install -r requirements.txt
 	@echo "✅ Dependencies installed."
 
+container-build:
+	@read -p "Enter image name (lowercase): " IMAGE_NAME; \
+	echo "🔧 Building Docker image '$$IMAGE_NAME'..."; \
+	docker build -t $$IMAGE_NAME .; \
+	echo "📦 Listing Docker images..."; \
+	docker image ls; \
+	echo "🚀 Run with: docker run -p 127.0.0.1:8080:8080 $$IMAGE_NAME"; \
+	echo "✅ Done."
+
 test:
 	#python -m pytest -vv --cov=Project test_*.py myLib/test_*.py
 
