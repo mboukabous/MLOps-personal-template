@@ -43,4 +43,6 @@ aws-config:
 deploy:
 	@echo "Deploying to production..."
 
+config: env-config install aws-config
+
 all: install lint test format deploy
