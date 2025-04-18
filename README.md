@@ -194,5 +194,5 @@ ENTRYPOINT [ "python" ]
 ## ECR
 
 - Deploy the container to AWS ECR using the commands in ECR
-- Fill in the deploy section in Makefile
+- Fill in the deploy section in Makefile then in actions (main.yml)
 - TODO: auto creation of ECR using a scripts
